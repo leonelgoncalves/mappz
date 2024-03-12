@@ -67,6 +67,9 @@ devDependencies:
   '@graphql-codegen/typescript-react-apollo':
     specifier: ^4.3.0
     version: 4.3.0(graphql-tag@2.12.6)(graphql@16.8.1)
+  '@happy-dom/jest-environment':
+    specifier: ^13.8.0
+    version: 13.8.0
   '@parcel/watcher':
     specifier: ^2.4.1
     version: 2.4.1
@@ -1590,6 +1593,18 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       graphql: 16.8.1
+
+  /@happy-dom/jest-environment@13.8.0:
+    resolution: {integrity: sha512-eSsQTT9I0/jbWH03CHDIlt7sYIKWlH1bxSnRmQk89IG5dHiZ8SZtIsrYTxSrXyXQG/TkpRV/uyeSjxH8UA9RIw==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@jest/environment': 29.7.0
+      '@jest/fake-timers': 29.7.0
+      '@jest/types': 29.6.3
+      happy-dom: 13.8.0
+      jest-mock: 29.7.0
+      jest-util: 29.7.0
+    dev: true
 
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -4578,6 +4593,15 @@ packages:
   /graphql@16.8.1:
     resolution: {integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+
+  /happy-dom@13.8.0:
+    resolution: {integrity: sha512-VJh0NFKEvjeSJAXlPlcqH0Sc2KT5wAAMSSzckcz31YwSon9pyNW+1LQNRZnuLlk24NcutCZgiImTsln64B/jKw==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      entities: 4.5.0
+      webidl-conversions: 7.0.0
+      whatwg-mimetype: 3.0.0
+    dev: true
 
   /has-bigints@1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
