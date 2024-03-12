@@ -47,6 +47,8 @@ Going to be honest here since is one of my best and worst qualities. Is the firs
 scratch and some decisions I took I'm not 100% sure of them. So, given more time I would like to do more research about 
 it.
 
+Note. Forgot to add before I sent the project. I also wasnt able to correctly generate the types from the graphql server. So even when they are being generated they are not being 100% correctly used...
+
 ### 3. REST api
 I know it was said to use Graphql. But I don't know if it was thought that way or not, the country api didn't provide 
 coordinates for the countries and the map api didn't provide the "selected country" (or I didn't invest enough time 
