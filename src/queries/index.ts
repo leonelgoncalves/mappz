@@ -1,7 +1,8 @@
 import { gql } from '@apollo/client';
+import { graphql } from '@/gql';
 
 export const GetContinentCountries = gql`
-    query Countries($continentCode: String!) {
+    query GetContinentCountries($continentCode: String!) {
         countries(filter: { continent: { eq: $continentCode } }) {
             emoji
             name
@@ -12,7 +13,7 @@ export const GetContinentCountries = gql`
 `;
 
 export const GetAllCountries = gql`
-    query Countries( $continentCodes: [String!]) {
+    query GetAllCountries( $continentCodes: [String!]) {
         countries(filter: { continent: { in:  $continentCodes } }) {
             emoji
             name
@@ -21,16 +22,17 @@ export const GetAllCountries = gql`
     }
 `;
 
-export const getAllContinents = gql`
-    {
+export const GetAllContinents = graphql(`
+   query GetAllContinents {
         continents {
             code,
             name,
             countries {
+                native
                 code
                 name
                 emoji
             }
         }
     }
-`;
+`);

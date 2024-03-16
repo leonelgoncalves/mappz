@@ -1,9 +1,11 @@
-import { Country } from '@/gql/graphql';
-import { gql, useQuery as useApolloQuery } from '@apollo/client';
+import { Language } from '@/gql/graphql';
+import { useQuery as useApolloQuery } from '@apollo/client';
 import { Card } from 'primereact/card';
 import { Chip } from 'primereact/chip';
 import { FC } from 'react';
-export const GetCountryByCode = gql`
+import { graphql } from '@/gql';
+
+export const GetCountryByCode = graphql(`
     query country($code: ID!) {
         country(code: $code) {
             name,
@@ -27,10 +29,10 @@ export const GetCountryByCode = gql`
 
         }
     }
-`;
+`);
 const CountryDescription: FC<{ code: string }> = ({ code }) => {
 
-    const { data } = useApolloQuery<{ country: Country }>(GetCountryByCode, {
+    const { data } = useApolloQuery(GetCountryByCode, {
         variables: {
             code
         }
@@ -64,7 +66,7 @@ const CountryDescription: FC<{ code: string }> = ({ code }) => {
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Languages</div>
                     <div className="text-900 w-full md:flex-order-0 flex-order-1 gap-1">
-                        {data?.country?.languages.map((lang, index) => (
+                        {data?.country?.languages.map((lang: Language, index: number) => (
                             <Chip label={lang.name} className="mr-2 mb-1" key={index} />))}
                     </div>
                 </li>

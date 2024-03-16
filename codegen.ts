@@ -2,20 +2,20 @@ import { CodegenConfig } from '@graphql-codegen/cli'
 
 const config: CodegenConfig = {
     schema: 'https://countries.trevorblades.com/graphql',
-    documents: ['!src/**/*.tsx', '!src/gql/**/*'],
+    documents: ['src/**/*.tsx', 'src/**/*.ts'],
+    watch: true,
     ignoreNoDocuments: true, // for better experience with the watcher
     generates: {
         './src/gql/': {
-            plugins: ['typescript', 'typescript-operations', 'typescript-react-apollo', ],
             config: {
-                withComponent: true,
-                documentMode: 'string',
-                avoidOptionals: true
+                withHooks: true,
+                withComponent: false,
+                futureProofEnums: true,
+                useTypeImports: true
             },
             preset: 'client',
         },
     },
-    hooks: { afterAllFileWrite: ['prettier --write'] },
 }
 
 export default config

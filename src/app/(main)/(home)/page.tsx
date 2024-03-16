@@ -7,13 +7,13 @@ import { Card } from 'primereact/card';
 import CountryDropdown from '@/components/CountrySelector';
 import dynamic from 'next/dynamic';
 import ContinentSelector from '@/components/ContinentSelector';
-import { getAllContinents } from '@/queries';
+import { GetAllContinents } from '@/queries';
 
 const DynamicMapContainer = dynamic(() => import('@/components/map/MapWrapper'), { ssr: false });
 
 
 const Dashboard = () => {
-    const { data } = useApolloQuery<{ continents: Continent[] }>(getAllContinents);
+    const { data } = useApolloQuery<{ continents: Continent[] }>(GetAllContinents);
 
     const [selectedCountry, setSelectedCountry] = useState<Country>();
     const [selectedContinent, setSelectedContinent] = useState<Continent>();
